@@ -1,8 +1,14 @@
 console.log("Hello");
+let doesOGo = true;
+const O = "O";
+const X = "X";
 
 function handleClick(event) {
-  console.log("tile clicked");
-  console.log(event.target);
+  const target = event.target;
+  if (target.innerText === "") {
+    target.innerText = doesOGo ? O : X;
+    doesOGo = !doesOGo;
+  }
 }
 
 const tiles = document.querySelectorAll(".tile");
